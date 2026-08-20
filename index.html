@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fantasy Artwork — Magic • Nature • Imagination</title>
+<meta name="description" content="Fantasy Artwork — magical, nature-inspired designs for people who love imagination, dragons, elves and epic fantasy.">
+<style>
+:root{--bg:#0b0c10;--panel:#12151c;--gold:#d8ae55;--cream:#f3ead8;--muted:#a7a7ad;--line:#292d36}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#27302a 0,#0b0c10 45%);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 22px}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,12,16,.88);backdrop-filter:blur(12px);z-index:10}
+.brand{display:flex;gap:12px;align-items:center;font-family:Georgia,serif;font-size:22px;font-weight:700}.brand span{color:var(--gold)}
+.links{display:flex;gap:25px;color:#d7d1c5;font-size:14px}.links a:hover{color:var(--gold)}
+.hero{padding:72px 0 55px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.kicker{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:800}.hero h1{font:700 clamp(48px,7vw,88px)/.92 Georgia,serif;margin:14px 0 22px}.hero h1 em{color:var(--gold);font-style:normal}.hero p{font-size:18px;line-height:1.7;color:#bbb8b1;max-width:600px}
+.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{padding:13px 20px;border-radius:7px;border:1px solid #4b4a45;font-weight:700}.btn.primary{background:var(--gold);color:#15130e;border-color:var(--gold)}.btn:hover{transform:translateY(-1px)}
+.logo-card{display:grid;place-items:center}.logo-card img{width:min(100%,500px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.55);border:5px solid #29251d}
+section{padding:65px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.section-head h2{font:700 38px Georgia,serif;margin:0}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:linear-gradient(180deg,#151922,#101217);border:1px solid var(--line);border-radius:14px;overflow:hidden}.art{aspect-ratio:1;background:radial-gradient(circle at 40% 35%,#4b4a3a,#171a1f 65%);display:grid;place-items:center;font:700 22px Georgia,serif;color:#dbc27f}.card-body{padding:17px}.card-body h3{margin:0 0 7px;font-size:16px}.price{color:var(--gold);font-weight:800}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:25px;border:1px solid var(--line);border-radius:12px;background:#101218}.feature b{display:block;margin-bottom:8px}.feature p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
+.banner{border:1px solid #4b422e;background:linear-gradient(120deg,#151812,#211b12);border-radius:16px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:30px}.banner h2{font:700 38px Georgia,serif;margin:0 0 10px}.banner p{color:#b9b5ad;margin:0}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#8f8f96;font-size:13px}.footer-in{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:auto}.buttons{justify-content:center}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.links{display:none}.banner{display:block}.banner .btn{display:inline-block;margin-top:20px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding-top:45px}.hero h1{font-size:55px}.logo-card img{width:85vw}}
+</style>
+</head>
+<body>
+<nav><div class="wrap" style="display:flex;width:100%;justify-content:space-between;align-items:center">
+<a class="brand" href="#"><span>✦</span> Canvas-Mystic</a>
+<div class="links"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<main>
+<section class="hero wrap">
+<div>
+<div class="kicker">Magic • Nature • Imagination</div>
+<h1>Wear Your <em>Imagination.</em></h1>
+<p>Epic fantasy artwork inspired by enchanted forests, ancient kingdoms, dragons, elves and the worlds that exist beyond the ordinary.</p>
+<div class="buttons"><a class="btn primary" href="#shop">Explore the collection</a><a class="btn" href="#about">Our story</a></div>
+</div>
+<div class="logo-card">
+<img src="fantasy-logo.png" alt="Fantasy Artwork circular artwork">
+</div>
+</section>
+
+<section id="shop" class="wrap">
+<div class="section-head"><div><h2>Featured Collection</h2><p>Original fantasy-inspired designs for your everyday world.</p></div></div>
+
+<div class="grid">
+<div class="card">
+  <div class="art" style="padding:0;overflow:hidden">
+    <img src="fantasy-logo.png" alt="Elven Forest Queen Portrait" style="width:100%;height:100%;object-fit:cover">
+  </div>
+  <div class="card-body">
+    <h3>Elven Forest Queen Portrait</h3>
+    <div style="color:#a7a7ad;font-size:13px;margin:5px 0 10px">Fantasy Elf T-Shirt</div>
+    <div class="price">$18 <span style="color:#777;text-decoration:line-through;font-weight:400;font-size:13px">$24</span></div>
+    <a class="btn primary" style="display:inline-block;margin-top:12px;padding:9px 13px;font-size:13px" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">View on TeePublic →</a>
+  </div>
+</div>
+<div class="card">
+  <div class="art">NEW ARTWORK</div>
+  <div class="card-body"><h3>More designs coming soon</h3><div class="price"><a href="https://www.teepublic.com/user/canvas-mystic" target="_blank">Visit the store →</a></div></div>
+</div>
+</div>
+
+</section>
+
+<section id="about" class="wrap">
+<div class="section-head"><div><h2>Made for dreamers</h2><p>Fantasy artwork with a cinematic, storybook feeling.</p></div></div>
+<div class="features">
+<div class="feature"><b>✦ Original Artwork</b><p>Distinctive fantasy compositions made to stand out on apparel, prints and accessories.</p></div>
+<div class="feature"><b>♢ Premium Feel</b><p>Designed with strong contrast, rich details and layouts that work beautifully across products.</p></div>
+<div class="feature"><b>☾ Endless Worlds</b><p>Dragons, magic, nature and mysterious kingdoms — new adventures are always being created.</p></div>
+</div>
+</section>
+
+<section id="contact" class="wrap">
+<div class="banner"><div><h2>Find your next adventure.</h2><p>Discover the full collection and bring a little fantasy into everyday life.</p></div><a class="btn primary" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">Visit our TeePublic shop</a></div>
+</section>
+</main>
+
+<footer><div class="wrap footer-in"><span>© 2026 Canvas-Mystic</span><span>Magic • Nature • Imagination</span></div></footer>
+</body>
+</html>
