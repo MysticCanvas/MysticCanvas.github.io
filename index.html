@@ -1,191 +1,75 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض MysticCanvas</title>
-    <style>
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: Arial, Tahoma, sans-serif;
-            background: radial-gradient(circle at top, #252525 0%, #111 45%, #080808 100%);
-            color: #fff;
-            min-height: 100vh;
-        }
-        header { text-align: center; padding: 55px 20px 35px; }
-        header h1 {
-            margin: 0 0 12px;
-            font-size: clamp(32px, 6vw, 60px);
-            letter-spacing: 2px;
-            color: #f5f5f5;
-            text-shadow: 0 0 20px rgba(255,255,255,.15);
-        }
-        header p {
-            margin: 0 auto;
-            max-width: 650px;
-            color: #aaa;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        .line {
-            width: 90px; height: 3px; background: #e63946;
-            margin: 25px auto 0; border-radius: 10px;
-        }
-        .gallery {
-            width: min(1200px, 92%);
-            margin: 10px auto 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            background: #181818;
-            border: 1px solid #333;
-            border-radius: 14px;
-            padding: 8px;
-            cursor: pointer;
-            transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-7px);
-            border-color: #e63946;
-            box-shadow: 0 15px 40px rgba(0,0,0,.5);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-            border-radius: 9px;
-            transition: transform .5s ease;
-        }
-        .gallery-item:hover img { transform: scale(1.04); }
-        .caption {
-            padding: 14px 8px 10px;
-            text-align: center;
-            color: #ddd;
-            font-size: 15px;
-        }
-        .portrait img { object-position: center top; }
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.92);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            z-index: 9999;
-        }
-        .lightbox.active { display: flex; }
-        .lightbox img {
-            max-width: 95vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 0 50px rgba(0,0,0,.8);
-        }
-        .close {
-            position: fixed;
-            top: 18px;
-            left: 25px;
-            width: 45px;
-            height: 45px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(255,255,255,.12);
-            color: white;
-            font-size: 30px;
-            line-height: 45px;
-            cursor: pointer;
-            transition: background .25s ease;
-        }
-        .close:hover { background: #e63946; }
-        footer {
-            text-align: center;
-            padding: 25px 20px 35px;
-            color: #777;
-            font-size: 14px;
-            border-top: 1px solid #222;
-        }
-        @media (max-width: 600px) {
-            header { padding-top: 40px; }
-            .gallery {
-                width: 94%;
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .gallery-item img {
-                height: auto;
-                max-height: 600px;
-                object-fit: contain;
-            }
-            .lightbox { padding: 15px; }
-            .close { top: 12px; left: 12px; }
-        }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Canvas-Mystic — a curated gallery of fantasy, gothic, mystical, botanical and cat artwork. Shop the designs on TeePublic.">
+<title>Canvas-Mystic — Fantasy Art Store</title>
+<style>
+:root{--bg:#08070d;--panel:#11101a;--panel2:#171522;--line:#302b40;--text:#f7f1e5;--muted:#a9a3b4;--gold:#d7b36a;--gold2:#f0d49a;--purple:#9b82dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#33284a 0,#0b0910 42%);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}.wrap{max-width:1240px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(8,7,13,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.5px}.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid #8d7446}.links{display:flex;gap:24px;color:var(--muted);font-size:14px}.links a:hover{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;border:1px solid var(--line);font-weight:800;cursor:pointer}.primary{background:var(--gold);color:#171108;border-color:var(--gold)}.secondary{background:var(--panel)}.ghost{background:transparent}.btn:hover{transform:translateY(-1px)}
+.hero{padding:70px 0 45px;text-align:center}.hero-logo{width:145px;height:145px;border-radius:50%;object-fit:cover;border:2px solid #987a45;box-shadow:0 0 50px rgba(215,179,106,.18)}.eyebrow{margin-top:20px;color:var(--gold);letter-spacing:4px;font-size:12px}.hero h1{font:700 clamp(44px,8vw,78px)/1 Georgia,serif;color:var(--gold2);margin:12px 0}.hero p{max-width:720px;margin:15px auto;color:var(--muted);font-size:17px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:35px auto 0;max-width:720px}.stat{background:rgba(17,16,26,.78);border:1px solid var(--line);border-radius:14px;padding:14px}.stat b{display:block;font-size:22px;color:var(--gold2)}.stat span{font-size:12px;color:var(--muted)}
+section{padding:50px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-head h2{font:700 34px Georgia,serif;margin:0}.section-head p{color:var(--muted);margin:5px 0 0}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-weight:700;cursor:pointer}.filter.active,.filter:hover{background:var(--gold);color:#171108;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:linear-gradient(145deg,#1a1825,#100f17);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#66577f}.art{height:320px;background:#15131f;display:flex;align-items:center;justify-content:center;overflow:hidden}.art img{width:100%;height:100%;object-fit:cover}.body{padding:16px}.tag{display:inline-block;font-size:11px;color:var(--gold2);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}.body h3{font:700 19px Georgia,serif;margin:0 0 7px}.body p{font-size:13px;color:var(--muted);margin:0 0 13px}.body .btn{width:100%}
+.banner{margin-top:30px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel)}.banner img{display:block;width:100%;height:270px;object-fit:cover}.banner .copy{padding:22px}.banner h3{font:700 28px Georgia,serif;margin:0 0 5px}.banner p{color:var(--muted);margin:0 0 15px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:#11101acc;border:1px solid var(--line);border-radius:14px;padding:22px}.feature b{display:block;margin-bottom:6px}.feature span{color:var(--muted);font-size:14px}.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#171523aa}.aboutgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.about h2{font:700 34px Georgia,serif}.about p{color:var(--muted)}.quote{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;font:21px Georgia,serif;color:#dfd3b7}
+footer{padding:30px 0;color:var(--muted);font-size:13px}.foot{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.links{display:none}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.aboutgrid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.banner img{height:220px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:45px}.hero-logo{width:125px;height:125px}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>MysticCanvas</h1>
-        <p>معرض للأعمال الفنية والتصاميم الغامضة، حيث تلتقي الخيالات والأساطير والفن في مساحة واحدة.</p>
-        <div class="line"></div>
-    </header>
-
-    <main class="gallery">
-        <div class="gallery-item portrait" onclick="openLightbox('images/elf.jpg')">
-            <img src="images/elf.jpg" alt="فتاة الإلف ذات القرون" loading="lazy">
-            <div class="caption">فتاة الإلف ذات القرون</div>
-        </div>
-
-        <div class="gallery-item portrait" onclick="openLightbox('images/hiphop.jpg')">
-            <img src="images/hiphop.jpg" alt="تصميم HIP-HOP" loading="lazy">
-            <div class="caption">HIP-HOP</div>
-        </div>
-
-        <div class="gallery-item portrait" onclick="openLightbox('images/mary.jpg')">
-            <img src="images/mary.jpg" alt="السيدة بالرداء الأزرق والزهرة البيضاء" loading="lazy">
-            <div class="caption">السيدة والزهرة البيضاء</div>
-        </div>
-
-        <div class="gallery-item portrait" onclick="openLightbox('images/painting.jpg')">
-            <img src="images/painting.jpg" alt="لوحة كلاسيكية خيالية" loading="lazy">
-            <div class="caption">اللوحة الكلاسيكية</div>
-        </div>
-
-        <div class="gallery-item portrait" onclick="openLightbox('images/elf2.jpg')">
-            <img src="images/elf2.jpg" alt="فتاة الإلف - نسخة ثانية" loading="lazy">
-            <div class="caption">فتاة الإلف — نسخة ثانية</div>
-        </div>
-    </main>
-
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <button class="close" aria-label="إغلاق" onclick="closeLightbox()">×</button>
-        <img id="lightboxImage" src="" alt="صورة مكبرة" onclick="event.stopPropagation()">
-    </div>
-
-    <footer>© 2026 MysticCanvas — جميع الحقوق محفوظة</footer>
-
-    <script>
-        function openLightbox(imageSrc) {
-            document.getElementById("lightboxImage").src = imageSrc;
-            document.getElementById("lightbox").classList.add("active");
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeLightbox() {
-            document.getElementById("lightbox").classList.remove("active");
-            document.getElementById("lightboxImage").src = "";
-            document.body.style.overflow = "";
-        }
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") closeLightbox();
-        });
-    </script>
-</body>
-</html>
+<header><div class="wrap nav"><a class="brand" href="#home"><img src="fantasy-logo.png" alt="Canvas-Mystic logo"><span>Canvas-Mystic</span></a><nav class="links"><a href="#collection">Collection</a><a href="#about">About</a><a href="#why">Why Us</a></nav><a class="btn primary" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">TeePublic Store</a></div></header>
+<main id="home">
+<section class="hero"><div class="wrap"><img class="hero-logo" src="fantasy-logo.png" alt="Canvas-Mystic Fantasy Artwork"><div class="eyebrow">MAGIC · MYSTERY · IMAGINATION</div><h1>Canvas-Mystic</h1><p>A growing collection of fantasy, gothic, sacred, botanical and cat artwork — created to turn imagination into wearable art.</p><div class="actions"><a class="btn primary" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">Shop on TeePublic</a><a class="btn secondary" href="#collection">Explore the Collection</a></div><div class="stats"><div class="stat"><b>35+</b><span>Artwork pieces</span></div><div class="stat"><b>5</b><span>Art categories</span></div><div class="stat"><b>1</b><span>Official TeePublic store</span></div></div></div></section>
+<section id="collection"><div class="wrap"><div class="section-head"><div><h2>The Artwork Collection</h2><p>Browse the designs already created for Canvas-Mystic.</p></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="fantasy">Fantasy</button><button class="filter" data-filter="gothic">Gothic</button><button class="filter" data-filter="sacred">Sacred</button><button class="filter" data-filter="cats">Cats</button><button class="filter" data-filter="botanical">Botanical</button></div></div><div class="grid" id="grid"></div></div></section>
+<section><div class="wrap"><div class="banner"><img src="assets/a-circular-highly-detailed-fantasy-artwork-scene.png" alt="Fantasy artwork collection"><div class="copy"><h3>Wear Your Imagination</h3><p>Every piece is presented here as part of the Canvas-Mystic gallery. Use the buttons to shop the available designs on TeePublic.</p><a class="btn primary" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">Visit the Full TeePublic Store</a></div></div></div></section>
+<section id="why"><div class="wrap"><div class="section-head"><div><h2>Why Canvas-Mystic?</h2><p>A visual identity built around atmosphere, mystery and imagination.</p></div></div><div class="features"><div class="feature"><b>🌙 Original Fantasy Worlds</b><span>Enchanted forests, legendary creatures and atmospheric characters.</span></div><div class="feature"><b>🖤 Dark & Gothic Art</b><span>Reaper, skull, occult-inspired and crimson moon artwork.</span></div><div class="feature"><b>🛍️ Direct Shopping</b><span>Visitors can go directly from this gallery to the official TeePublic store.</span></div></div></div></section>
+<section id="about" class="about"><div class="wrap aboutgrid"><div><h2>About Canvas-Mystic</h2><p>Canvas-Mystic is a personal art storefront bringing together fantasy scenes, mystical characters, sacred floral portraits, botanical patterns and playful cat designs in one evolving collection.</p><a class="btn primary" href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">Open TeePublic</a></div><div class="quote">“Wear your imagination.”<br><small>— Canvas-Mystic</small></div></div></section>
+</main><footer><div class="wrap foot"><span>© 2026 Canvas-Mystic · Fantasy Artwork</span><a href="https://www.teepublic.com/user/canvas-mystic" target="_blank" rel="noopener">TeePublic Store →</a></div></footer>
+<script>
+const store='https://www.teepublic.com/user/canvas-mystic';
+const items=[
+['reaper-throne-under-the-blood-moon.png','Reaper Throne Under the Blood Moon','gothic','A dark throne scene beneath a crimson moon.'],
+['a-circular-highly-detailed-fantasy-artwork-scene.png','Mystic Fantasy World','fantasy','A richly detailed fantasy scene full of atmosphere.'],
+['a-wide-banner-hero-image-for-a-cat-themed-store-br.png','Cat-Themed Fantasy Banner','cats','A playful fantasy banner created for a cat-themed collection.'],
+['image-gen-1-1.png','Mystic Portrait I','fantasy','A dramatic fantasy portrait with an imaginative atmosphere.'],
+['image-gen-1-2.png','Sacred Floral Portrait','sacred','A serene sacred portrait with floral symbolism.'],
+['image-gen-1-8.png','Mystic Character VIII','fantasy','A mysterious character study from the fantasy collection.'],
+['image-gen-1.png','Mystic Character','fantasy','An atmospheric fantasy character artwork.'],
+['art-8.png','Hard Work, Best Cat Life','cats','A playful cat design celebrating the good life.'],
+['1.png','Life Is Better With Cats I','cats','A cheerful cat-lover design.'],
+['art-10.png','Life Is Better With Cats II','cats','Another playful celebration of life with cats.'],
+['art-11.png','Virgin Mary with White Lily I','sacred','A serene sacred portrait with a white lily.'],
+['art-12.png','Funny Cat Store Artwork','cats','A playful and humorous cat-themed design.'],
+['art-13.png','Winged Skull & Red Crescent','gothic','A dark emblem featuring a winged skull and red crescent.'],
+['art-14.png','Winged Skull Beneath the Red Crescent','gothic','A dramatic gothic skull composition.'],
+['art-15.png','Reaper with Red Eyes','gothic','A haunting reaper portrait with intense red eyes.'],
+['art-16.png','Crimson Gothic Banner','gothic','A crimson gothic banner inspired by hidden forces.'],
+['art-17.png','Six Floral Linocut Tiles','botanical','A decorative botanical linocut tile composition.'],
+['art-18.png','Blue Floral Linocut Tiles','botanical','A blue-toned botanical print collection.'],
+['art-19.png','Mystic Hexagon of Skulls','gothic','A geometric gothic composition of skulls and red moons.'],
+['art-20.png','Mary with Sacred Lily','sacred','A sacred portrait of Mary with a symbolic lily.'],
+['art-21.png','Mary with White Flower','sacred','A peaceful Marian portrait with a white flower.'],
+['art-22.png','Crimson Occult Gothic Emblem','gothic','A bold crimson gothic emblem.'],
+['art-23.png','Mystic Throne & Hidden Symbols','gothic','A mysterious throne surrounded by symbolic details.'],
+['art-24.png','Enchanted Forest: Nature & Magic','fantasy','A magical forest scene filled with atmosphere.'],
+['art-25.png','Relaxed Cat: Not Today','cats','A humorous relaxed-cat statement design.'],
+['art-26.png','Skull Priest Before the Red Moon','gothic','A dramatic skull priest beneath a red moon.'],
+['art-27.png','Horned Skull Priest in a Mystic Circle','gothic','A symbolic gothic portrait inside a mysterious circle.'],
+['art-28.png','Goat Priest Under the Red Moon','gothic','A dark fantasy goat-priest composition.'],
+['art-29.png','Fantasy, Magic & Nature','fantasy','A wide fantasy artwork celebrating magic and nature.'],
+['art-30.png','Crimson Gothic Symbols','gothic','A collection of crimson gothic symbols.'],
+['art-31.png','Virgin Mary with White Lily II','sacred','A second sacred Marian portrait with a white lily.'],
+['art-32.png','Winged Reaper Under the Red Moon','gothic','A winged reaper beneath a dramatic red moon.'],
+['art-33.png','Winged Reaper & Red Crescent','gothic','A powerful gothic reaper composition.'],
+['art-34.png','Elven Forest Queen Portrait','fantasy','An enchanted elven queen in a magical forest.'],
+['art-35.png','Blue Botanical Linocut','botanical','A refined blue botanical linocut pattern.']
+];
+const labels={fantasy:'Fantasy',gothic:'Gothic',sacred:'Sacred',cats:'Cats',botanical:'Botanical'};
+const grid=document.getElementById('grid');
+function render(filter='all'){grid.innerHTML=items.filter(x=>filter==='all'||x[2]===filter).map(x=>`<article class="card"><div class="art"><img loading="lazy" src="assets/${x[0]}" alt="${x[1]}"></div><div class="body"><span class="tag">${labels[x[2]]}</span><h3>${x[1]}</h3><p>${x[3]}</p><a class="btn primary" href="${store}" target="_blank" rel="noopener">View on TeePublic</a></div></article>`).join('')}
+render();document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)}));
+</script>
+</body></html>
